@@ -1,0 +1,101 @@
+@for $i from 1 through 50 {
+    .fz-#{$i} {
+        &,
+        * {
+            font-size: #{$i}px !important;
+        }
+    }
+}
+
+@for $i from 1 through 100 {
+    .y-#{$i} {
+        transform: translateY(#{$i}px);
+    }
+    .y--#{$i} {
+        transform: translateY(-#{$i}px);
+    }
+    .x-#{$i} {
+        transform: translateX(#{$i}px);
+    }
+    .x--#{$i} {
+        transform: translateX(-#{$i}px);
+    }
+    .w-#{$i} {
+        width: calc(#{$i} * 1%) !important;
+    }
+    .max-w-#{$i} {
+        max-width: calc(#{$i} * 1%) !important;
+    }
+}
+
+.bg-main-lightest {
+    background-color: var(--main-color-lightest);
+}
+
+[class*='1:1'] {
+    aspect-ratio: 1/1;
+}
+
+.hover-main-lightest {
+    transition: background-color 0.2s ease;
+    &:hover {
+        background-color: var(--main-color-lightest) !important;
+    }
+}
+
+.no-outline {
+    &,
+    * {
+        outline: none;
+    }
+}
+
+.limit-text {
+    text-overflow: ellipsis;
+    /* Needed to make it work */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@for $i from 1 through 10 {
+    .limit-text-#{$i} {
+        display: -webkit-box;
+        -webkit-line-clamp: #{$i};
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+.w-min {
+    width: min-content;
+}
+
+.w-max {
+    width: max-content;
+}
+
+.list-group {
+    .v-icon {
+        margin-inline-start: inherit !important;
+    }
+}
+
+.custom-table {
+    thead td,
+    thead th,
+    tbody tr:nth-child(even) td {
+        background-color: #f6f6f6;
+    }
+
+    thead td {
+        height: 4em !important;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    overflow-y: overlay;
+}

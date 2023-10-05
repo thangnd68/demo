@@ -1,0 +1,25 @@
+.box-header {
+    color: var(--black);
+    // display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 16px;
+    width: 100%;
+}
+
+.box-left {
+    font-weight: 500;
+
+    .sidebar-hi {
+        color: var(--black);
+        padding-left: 4px;
+    }
+    .sidebar-name {
+        color: var(--main-color);
+    }
+    .breadcrumbs {
+        font-size: 14px;
+        padding: 0;
+    }
+}

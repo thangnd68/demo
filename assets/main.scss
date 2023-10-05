@@ -1,0 +1,10 @@
+@use 'vuetify';
+
+@import './variables';
+@import './layout/container';
+@import './layout/sidebar';
+@import './layout/topbar';
+@import './layout/date-picker';
+@import './custom';
+
+@import './pages/dashboard';

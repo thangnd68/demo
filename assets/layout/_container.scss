@@ -1,0 +1,368 @@
+*,
+html,
+body {
+    font-family: 'Inter', sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+html {
+    overflow-y: auto;
+    .v-main {
+        min-height: 100vh;
+        background-color: #f3f8fc;
+    }
+}
+
+.primary {
+    background-color: #f88125 !important;
+}
+
+.primary--text {
+    color: #f88125 !important;
+}
+
+.information {
+    background-color: #f88125 !important;
+}
+
+.information--text {
+    color: #f88125 !important;
+}
+.error {
+    background-color: #ff4559 !important;
+}
+.error--text {
+    color: #ff4559 !important;
+}
+.warning {
+    background-color: #ff4559 !important;
+}
+
+.warning--text {
+    color: #ff4559 !important;
+}
+
+.success {
+    background-color: #4dc591 !important;
+}
+.success--text {
+    color: #4dc591 !important;
+}
+
+// Override the textfield's radius
+.v-text-field {
+    .v-field__outline__start {
+        border-radius: 10px 0 0 10px !important;
+    }
+    .v-field__outline__end {
+        border-radius: 0 10px 10px 0 !important;
+    }
+}
+
+.v-btn--disabled {
+    background-color: #f6f6f6 !important;
+}
+
+.v-btn {
+    font-weight: 700 !important;
+}
+
+.cp {
+    cursor: pointer !important;
+}
+.label {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 6px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.main-text-field {
+    .v-field__input {
+        width: 1rem !important;
+        height: 2rem !important;
+        padding-left: 2.3rem !important;
+        font-size: 20px !important;
+        color: #f88125 !important;
+    }
+}
+
+// .main-text-field-shadow {
+//     .v-field--active {
+//         box-shadow: 0px 0px 0px 3px rgba(248, 129, 37, 0.25) !important;
+//         border: 1px solid #f88125 !important;
+//     }
+// }
+
+// .main-text-field-error {
+//     .v-field--variant-solo {
+//         border: 1px solid #ff4559 !important;
+//     }
+// }
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #f88125;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #f88125;
+}
+
+.v-field--variant-solo {
+    box-shadow: none !important;
+    border: 1px solid #c0c0c0 !important;
+    border-radius: 8px !important;
+    // &:hover {
+    //     border: 1px solid #f88125 !important;
+    // }
+}
+
+.v-field__prepend-inner {
+    color: #1a1a1a !important;
+    font-weight: 900 !important;
+    line-height: 14px !important;
+}
+
+.v-text--error {
+    border: 1px solid red !important;
+}
+
+.t-d-none {
+    text-decoration: none !important;
+}
+
+.cp {
+    cursor: pointer !important;
+}
+
+@for $i from 5 through 50 {
+    .fs-#{$i} {
+        font-size: $i + px;
+    }
+}
+
+@for $y from 100 through 900 {
+    .fw-#{$y} {
+        font-weight: $y;
+    }
+}
+
+@for $z from 20 through 1000 {
+    .lh-#{$z} {
+        line-height: $z + px;
+    }
+}
+
+.c-auto {
+    cursor: auto !important;
+}
+
+.cus_main {
+    padding: 0 !important;
+}
+
+.custom_header_table tbody tr:nth-of-type(even) {
+    font-size: 14px !important;
+    color: #1a1a1a !important ;
+    line-height: 20px !important;
+    font-weight: 400 !important;
+    background-color: #f6f6f6 !important;
+}
+
+.custom_header_table > .v-table__wrapper > table > thead > tr > th {
+    // box-shadow: inset 0 -1px 0 rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+    box-shadow: unset !important;
+}
+
+.custom_header_table > .v-table__wrapper > table > thead > tr > th {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #858585 !important;
+    // text-align: center !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: unset !important;
+    line-height: 18px !important;
+}
+
+/* Mixin */
+/* Set các giá trị với màn hình tương ứng */
+$XS: 480px;
+$SM: 768px;
+$MD: 1024px;
+$XL: 1170px;
+body {
+    --mobile-breakpoint: 600px;
+}
+
+// media queries
+@mixin Responsive($canvas) {
+    @if $canvas == XS {
+        @media only screen and (min-width: $XS) {
+            @content;
+        }
+    } @else if $canvas == SM {
+        @media only screen and (min-width: $SM) {
+            @content;
+        }
+    } @else if $canvas == MD {
+        @media only screen and (min-width: $MD) {
+            @content;
+        }
+    } @else if $canvas == XL {
+        @media only screen and (min-width: $XL) {
+            @content;
+        }
+    }
+}
+
+.v-main {
+    @include Responsive(XS) {
+        --v-layout-left: 0 !important;
+    }
+    @include Responsive(SM) {
+        --v-layout-left: 0 !important;
+    }
+    @include Responsive(MD) {
+        --v-layout-left: 82px !important;
+    }
+    @include Responsive(XL) {
+        --v-layout-left: 82px !important;
+    }
+}
+
+.navi-child {
+    @include Responsive(MD) {
+        transform: translateX(0%) !important;
+    }
+}
+
+.v-toolbar {
+    @include Responsive(XS) {
+        left: 0 !important;
+        width: calc(100%) !important;
+    }
+    @include Responsive(SM) {
+        left: 0 !important;
+        width: calc(100%) !important;
+    }
+
+    @include Responsive(MD) {
+        left: 82px !important;
+        width: calc((100% - 82px) - 0px) !important;
+    }
+    @include Responsive(XL) {
+        left: 82px !important;
+        width: calc((100% - 82px) - 0px) !important;
+    }
+}
+
+.tree-row-txt {
+    font-size: 1rem;
+    padding-left: 10px;
+    color: black;
+}
+
+.v-list-item--active {
+    color: white !important;
+}
+
+.date_picker_style input {
+    border: 1px solid rgba(149, 149, 149, 0.5215686275);
+    padding: 12px 35px !important;
+    border-radius: 8px !important;
+    font-size: 14px;
+}
+// .datepicker_container {
+//     position: relative;
+//     .datepicker_custom {
+//         border: 1px solid rgba(149, 149, 149, 0.5215686275);
+//         border-radius: 8px;
+//         overflow: hidden;
+//         input {
+//             border: none;
+//             padding: 0;
+//             padding-left: 15px !important;
+//             padding-top: 22px !important;
+//             margin-bottom: 2px;
+//             background-color: transparent;
+//             color: #565656;
+//         }
+//         .dp__input_icon {
+//             right: 0 !important;
+//             left: auto !important;
+//         }
+
+//         .dp__clear_icon {
+//             // position: absolute;
+//             // top: 50%;
+//             right: 30px;
+//             font-weight: bold;
+//         }
+//     }
+
+//     .label {
+//         position: absolute;
+//         top: 28px;
+//         left: 28px;
+//         font-size: 16px;
+//         font-weight: 500;
+//         color: #b8b3b3;
+//         transition: 0.15s ease;
+//         &.small {
+//             transform: translate(-2px, -12px);
+//             font-size: 12px;
+//             transition: 0.15s ease;
+//         }
+//     }
+// }
+.date_picker_style_search input {
+    border: 1px solid rgba(149, 149, 149, 0.5215686275);
+    padding: 12px 35px !important;
+    border-radius: 8px !important;
+}
+
+.expansion-panels-style {
+    .v-expansion-panel__shadow {
+        box-shadow: none;
+    }
+    .v-expansion-panel--active > .v-expansion-panel-title {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        min-height: 48px;
+    }
+    .v-expansion-panel-title {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .v-expansion-panel-title--active > .v-expansion-panel-title__overlay,
+    .v-expansion-panel-title[aria-haspopup='menu'][aria-expanded='true'] > .v-expansion-panel-title__overlay {
+        opacity: 0;
+    }
+    .v-expansion-panel-title__overlay {
+        background-color: transparent !important;
+    }
+    .v-expansion-panel-text {
+        background-color: #f6f6f6;
+    }
+    .v-expansion-panel-text__wrapper {
+        padding: 4px 2px;
+    }
+}
+.___th {
+    text-transform: uppercase;
+}
+
+.btn-close-dialog {
+    font-size: 1.2rem !important;
+
+    &:hover {
+        border-radius: 50% !important;
+    }
+}

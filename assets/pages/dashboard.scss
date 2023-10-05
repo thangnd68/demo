@@ -1,0 +1,308 @@
+.main_right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 12px;
+
+    .calendar_custom {
+        width: 100%;
+        border: transparent;
+    }
+}
+
+.box_calendar {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.box_schedule {
+    width: 100%;
+    padding: 0 16px;
+
+    .box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 8px 16px;
+        gap: 8px;
+        background: #f6f6f6;
+        border-radius: 8px;
+        margin: 16px 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.info {
+    width: 100%;
+    position: relative;
+
+    .class_name {
+        color: var(--main-color);
+        font-size: 14px;
+    }
+    ul {
+        li {
+            display: inline-block;
+            color: #858585;
+            font-size: 12px;
+        }
+    }
+
+    .dots-pos {
+        position: absolute;
+        top: 5px;
+        right: 0;
+    }
+}
+
+.info-dots {
+    background: transparent !important;
+    width: 14px !important;
+    height: 14px !important;
+    font-size: 10px !important;
+    color: #858585 !important;
+}
+
+.box_student {
+    padding: 16px;
+    gap: 12px;
+    background: #ffffff;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.student_title {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+
+    span {
+        font-size: 16px;
+    }
+
+    a {
+        font-size: 12px;
+        color: var(--main-color);
+        text-decoration: none;
+    }
+}
+
+.student_item {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+
+    .student_info {
+        display: flex;
+        align-items: center;
+
+        span {
+            padding-left: 15px;
+        }
+    }
+}
+
+.main_tab {
+    .v-btn {
+        text-transform: capitalize;
+        color: #b1b1b1;
+        font-weight: 500 !important;
+        font-size: 16px;
+
+        .v-tab__slider {
+            width: 8px;
+            height: 8px;
+            background: #f88125;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+        }
+    }
+
+    .v-slide-group-item--active {
+        color: #1a1a1a;
+    }
+}
+
+/* [CALENDAR] =============================== */
+.calendar {
+    background: #fff;
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 16px;
+    .calendar-title {
+        font-weight: 500;
+        font-size: 20px;
+        color: #000000;
+    }
+    .app-calendar {
+        table {
+            min-width: 1200px;
+        }
+        .fc-view-harness {
+            overflow: auto;
+        }
+        .fc-toolbar h2 {
+            display: inline;
+        }
+
+        .fc-view-harness {
+            height: calc(100vh - 222px) !important;
+        }
+
+        .fc-toolbar-title {
+            font-weight: 500;
+            font-size: 14px;
+            color: #858585;
+        }
+
+        .fc-button-primary {
+            background-color: transparent;
+            border-color: transparent;
+            color: #1a1a1a;
+            padding: 0;
+            margin-top: -0.5rem;
+            outline: none;
+
+            &:hover {
+                background-color: transparent;
+                border-color: transparent;
+                color: #1a1a1a;
+            }
+            &:active {
+                background-color: transparent !important;
+                border-color: transparent !important;
+                color: #1a1a1a !important;
+            }
+
+            &:focus {
+                box-shadow: none !important;
+                color: #1a1a1a;
+            }
+
+            .fc-icon {
+                font-size: 14px;
+            }
+        }
+
+        .fc-event {
+            border: 1px dashed #c0c0c0 !important;
+            border-radius: 8px !important;
+            // padding: 5px 18px;
+
+            .cal_event {
+                font-weight: 400;
+                font-size: 16px;
+                color: #1a1a1a;
+            }
+
+            .cal_subject {
+                font-weight: 500;
+                font-size: 12px;
+                color: var(--main-color);
+                margin-top: -0.3rem;
+                padding-top: 4px;
+            }
+        }
+
+        .fc-timegrid-slot-minor {
+            border-top-style: none;
+        }
+
+        td {
+            border: none;
+            border-left: 1px solid var(--fc-border-color);
+        }
+
+        .event_wrapper {
+            padding: 5px 10px;
+            .event_info {
+                display: flex;
+                justify-content: space-between;
+                .img {
+                    ul {
+                        display: flex;
+                        align-items: center;
+
+                        list-style: none;
+                        margin-right: 0.2rem;
+
+                        li {
+                            max-width: 1.2rem;
+
+                            img {
+                                width: 1.5rem;
+                                height: 1.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .time {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            font-size: 0.7rem;
+
+            .dots {
+                width: 4px;
+                height: 4px;
+                background: #e4e4e4;
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
+.v-window .v-slide-group__content {
+    padding: 6px 0 !important;
+}
+
+.fc-timegrid-slots {
+    tr {
+        height: 40px;
+
+        &:nth-child(even) {
+            td {
+                &:first-child {
+                    position: relative;
+                }
+            }
+        }
+        &:nth-child(odd) {
+            border-top: 1px solid #ccc !important;
+        }
+        td:first-child,
+        th:first-child {
+            width: 200px;
+        }
+    }
+}
+
+.box_schedule_header {
+    width: 100%;
+    padding: 20px 15px !important;
+    border-radius: 8px !important;
+    &:hover {
+        background-color: #fbf4eb;
+        color: #f88125;
+    }
+}
+.active {
+    .item-class {
+        background: #fff3ea !important;
+    }
+}
+.pd {
+    padding: 0 1rem !important;
+}
+.item-class {
+    box-shadow: 2px 2px 6px -2px rgb(0 0 0 / 40%);
+}
